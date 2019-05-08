@@ -1,31 +1,31 @@
 <html>
   <head>
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>    
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
 
   </head>
-  
+
   <body>
 
-    <div id="container" style="width:100%; height:400px;"></div>
+    <div id="container" style="width:100%; height:800px;"></div>
     <script type="text/javascript">
 
       $(document).ready(function() {
 
-      $.getJSON("http://0.0.0.0:8000/ticks.json", function (data) {
+      $.getJSON("http://localhost:8000/ticks.json", function (data) {
 
-      $.getJSON("http://0.0.0.0:8000/ml_results.json", function (ml_data) {
-      
-        
+      $.getJSON("http://localhost:8000/ml_results.json", function (ml_data) {
+
+
         var processedData = [];
         for (var key in data) {
            ob = data[key];
             processedData.push([Date.parse(key), parseFloat(ob.open), parseFloat(ob.high), parseFloat(ob.low), parseFloat(ob.close)]);
         };
         processedData = processedData.sort();
-        console.log(processedData);
-        
+        // console.log(processedData);
+
         // Create the chart
         $('#container').highcharts('StockChart', {
 
@@ -42,23 +42,24 @@
                       });
                    }
                 }}},
-      
+
             rangeSelector : {
                 selected : 1
             },
 
             title : {
-                text : 'EURUSD'
+                text : ''
              },
              yAxis: {
                 title: {
                     text: 'Exchange rate'
                 },
+                type: 'logarithmic',
                 plotLines: []
             },
             series : [{
                 type : 'candlestick',
-                name : 'GOOG Stock Price',
+                name : 'Price',
                 data : processedData,
                 tooltip: {
                     valueDecimals: 2
@@ -69,5 +70,5 @@
     </script>
   </body>
 
-  
+
 </html>
