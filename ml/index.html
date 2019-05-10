@@ -14,7 +14,7 @@
       // TODO: Rewrite in React or in hyperhtml or HTML5 web component
 
       $(document).ready(function() {
-          $.getJSON("http://localhost:3000/ticks.json", function(a) {
+          $.getJSON("http://localhost:3000/ticks/ticks.json", function(a) {
               $.getJSON("http://localhost:3000/ml_results.json", function(b) {
                   var c = [];
                   for (var d in a) {

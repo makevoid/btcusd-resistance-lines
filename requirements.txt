@@ -3,3 +3,6 @@ pandas
 sklearn
 scipy
 pyyaml
+joblib
+dask
+distributed

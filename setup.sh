@@ -8,6 +8,8 @@ source /tmp/chart-annotator/bin/activate
 
 pip install -r requirements.txt
 
+# or: python3 -m pip install  -r requirements.txt
+
 cd ml
 
 echo "Downloading Bitfinex USD historical prices"
