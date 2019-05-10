@@ -1,4 +1,4 @@
-# Try SciKit ML Charts
+# Chart Annotator - Resistance Lines
 
 ### Automatically find resistance lines in pricing trading data 
 
