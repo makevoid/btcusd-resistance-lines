@@ -1,7 +1,8 @@
 """
 Find the support/resistance lines in a chart
 
-JonV / May 16 2015
+@JonV / May 2015
+@makevoid / May 2019
 """
 
 # https://api.bitcoincharts.com/v1/csv/
@@ -13,11 +14,11 @@ import pandas
 import numpy as np
 from sklearn.cluster import MeanShift, estimate_bandwidth
 
-# from sklearn.externals.joblib import Parallel, parallel_backend
-
 
 def main(filename):
-	# read csv files with daily data per tick
+    # Prepare
+    # ---
+    # read csv files with daily data per tick
     df = pandas.read_csv(filename, parse_dates=[0], index_col=0, names=['Date_Time', 'Buy', 'Sell'],
                          date_parser=lambda x: pandas.to_datetime(x, unit="s"))
 
@@ -28,13 +29,24 @@ def main(filename):
     # use 'ask'
     sell_data = grouped_data.as_matrix(columns=['Buy'])
 
+
+    # Configure
+    # ---
+
     # calculate bandwidth (expirement with quantile and samples)
     bandwidth = estimate_bandwidth(sell_data, quantile=0.07, n_samples=4000)
     ms = MeanShift(n_jobs=12, bandwidth=bandwidth, bin_seeding=True)
 
+
+    # Fit
+    # ---
+
     # fit the data
     ms.fit(sell_data)
 
+
+    # Export
+    # ---
     ml_results = []
     for k in range(len(np.unique(ms.labels_))):
         my_members = ms.labels_ == k
@@ -44,6 +56,9 @@ def main(filename):
         ml_results.append(min(values))
         ml_results.append(max(values))
 
+
+    # Save
+    # ---
     # export the data for the visualizations
     ticks_data.to_json('ticks.json', date_format='iso', orient='index')
 
@@ -57,3 +72,11 @@ if __name__ == "__main__":
         print('ml.py <inputfile.csv>')
         sys.exit(2)
     main(sys.argv[1])
+
+
+# from sklearn.externals.joblib import Parallel, parallel_backend
+
+# TODO: add parallel
+# from sklearn.externals.joblib import Parallel, parallel_backend
+
+# TODO: add AWS libs

@@ -14,4 +14,6 @@ echo "Downloading Bitfinex USD historical prices"
 ./get.sh
 
 echo "Starting Server"
+cd ml
+
 python -m SimpleHTTPServer 3000
