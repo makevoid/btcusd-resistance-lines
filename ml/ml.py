@@ -52,8 +52,6 @@ def main(filename):
         f.write(json.dumps(ml_results))
 
 
-    print("Done. Goto 0.0.0.0:8000/chart.html")
-
 if __name__ == "__main__":
     if (len(sys.argv) < 2):
         print('ml.py <inputfile.csv>')
