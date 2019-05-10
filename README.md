@@ -45,3 +45,10 @@ https://github.com/aws/sagemaker-scikit-learn-container
 
 
 Project forked from https://github.com/jonromero/forex_algotrading
+
+### Screenshot
+
+An image sometimes is better than 1k words:
+
+
+![](https://github.com/makevoid/chart-annotator-resistance-lines/blob/master/tmp/resistance-lines-ml-classification-meanshift.png?raw=true)
