@@ -19,8 +19,6 @@ pip install -r requirements.txt
 
 ### Running 
 
-First of all, download some data to play around or unzip and use the dataset in data/sample.csv.zip. This contains data for EURUSD for 2014 and a couple of months for 2015.
-
 Then run the ml.py
 > python ml.py data/sample.csv
 
@@ -40,3 +38,7 @@ and open your browser to http://0.0.0.0:3000/chart.html
 https://scikit-learn.org/stable/modules/generated/sklearn.cluster.MeanShift.html
 
 https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-adds-scikit-learn-support/
+
+
+Project forked from https://github.com/jonromero/forex_algotrading
+ 
