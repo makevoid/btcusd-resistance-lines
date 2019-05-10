@@ -27,14 +27,16 @@ def main(filename):
     ticks_data = grouped_data['Buy'].resample('24H').ohlc()
 
     # use 'ask'
-    sell_data = grouped_data.as_matrix(columns=['Buy'])
+    price_data = grouped_data.as_matrix(columns=['Buy'])
 
 
     # Configure
     # ---
 
+    # TODO: write smart configuration based on number of days
+
     # calculate bandwidth (expirement with quantile and samples)
-    bandwidth = estimate_bandwidth(sell_data, quantile=0.07, n_samples=4000)
+    bandwidth = estimate_bandwidth(price_data, quantile=0.07, n_samples=4000)
     ms = MeanShift(n_jobs=12, bandwidth=bandwidth, bin_seeding=True)
 
 
@@ -42,7 +44,7 @@ def main(filename):
     # ---
 
     # fit the data
-    ms.fit(sell_data)
+    ms.fit(price_data)
 
 
     # Export
@@ -50,7 +52,7 @@ def main(filename):
     ml_results = []
     for k in range(len(np.unique(ms.labels_))):
         my_members = ms.labels_ == k
-        values = sell_data[my_members, 0]
+        values = price_data[my_members, 0]
 
         # find the edges
         ml_results.append(min(values))
