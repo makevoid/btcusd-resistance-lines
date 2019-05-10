@@ -33,11 +33,16 @@ or
 and open your browser to http://0.0.0.0:3000/chart.html
 
 
+
 ### Docs
 
 https://scikit-learn.org/stable/modules/generated/sklearn.cluster.MeanShift.html
 
 https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-adds-scikit-learn-support/
+
+### Sources / Extra
+
+https://github.com/aws/sagemaker-scikit-learn-container
 
 
 Project forked from https://github.com/jonromero/forex_algotrading
