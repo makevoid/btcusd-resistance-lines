@@ -13,9 +13,12 @@
 
       // TODO: Rewrite in React or in hyperhtml or HTML5 web component
 
+      // const host = "http://localhost:3000"
+      const host = "https://s3-eu-west-1.amazonaws.com/mkv-ml"
+
       $(document).ready(function() {
-          $.getJSON("http://localhost:3000/ticks.json", function(a) {
-              $.getJSON("http://localhost:3000/ml_results.json", function(b) {
+          $.getJSON(`${host}/ticks.json`, function(a) {
+              $.getJSON(`${host}/ml_results.json`, function(b) {
                   var c = [];
                   for (var d in a) {
                       ob = a[d];

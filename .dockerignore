@@ -1,0 +1,9 @@
+*.csv
+*.gz
+*.json
+ml/*.csv
+data/*.csv
+ml/*.gz
+ml/*.json
+!data/data.csv
+# !ml/data.csv

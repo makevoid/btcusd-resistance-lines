@@ -1,0 +1,9 @@
+version: "3.6"
+
+services:
+  annotator:
+    image: makevoid/chart-annotator-resistance-lines
+    build:
+      context: .
+    environment:
+      S3BUCKET: mkv-ml
