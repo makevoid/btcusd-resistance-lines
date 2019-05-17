@@ -4,10 +4,11 @@ cd ml
 
 ls ../data
 
-~/.local/bin/aws s3 cp ml.py s3://$S3BUCKET/
+# ~/.local/bin/aws s3 ls s3://$S3BUCKET/
+./get.sh
 
 date
-python3 ml.py ../data/data.csv
+python3 ml.py data.csv
 ls
 date
 
