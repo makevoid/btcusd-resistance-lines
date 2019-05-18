@@ -52,3 +52,7 @@ An image sometimes is better than 1k words:
 
 
 ![](https://github.com/makevoid/chart-annotator-resistance-lines/blob/master/tmp/resistance-lines-ml-classification-meanshift.png?raw=true)
+
+You probably want to tune `quantile` so that it generates let's say 2-10 clusters (a number that you can analyze quite quickly).
+
+
