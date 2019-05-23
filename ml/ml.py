@@ -27,8 +27,7 @@ def main(filename):
     ticks_data = grouped_data['Buy'].resample('24H').ohlc()
 
     # use 'ask'
-    price_data = grouped_data.as_matrix(columns=['Buy'])
-
+    price_data = grouped_data[['Buy']].values
 
     # Configure
     # ---
