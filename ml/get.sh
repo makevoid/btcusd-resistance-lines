@@ -7,6 +7,10 @@ gunzip -f bitstampUSD.csv.gz
 # tail -20900000 bitstampUSD.csv > data.csv
 
 # Cut only latest period (from this year)
-tail -12000000 bitstampUSD.csv > data.csv
+# tail -12000000 bitstampUSD.csv > data.csv
+
+# Cut only latest period (recent uptrend)
+tail -5000000 bitstampUSD.csv > data.csv
+
 
 rm -f bitstampUSD.csv.gz bitstampUSD.csv

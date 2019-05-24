@@ -31,12 +31,13 @@ def main(filename):
 
     # Configure
     # ---
-
+    
     # TODO: write smart configuration based on period (number of days) and frequency (price-range, a higher quantile will create more clusters volatility)
 
     # calculate bandwidth (expirement with quantile and samples)
     # quantile=0.07 # for 20900000
-    quantile=0.12 # for 12000000
+    quantile=0.12   # for 12000000
+    quantile=0.2    # for 5000000
     bandwidth = estimate_bandwidth(price_data, quantile=quantile, n_samples=4000)
     ms = MeanShift(n_jobs=12, bandwidth=bandwidth, bin_seeding=True)
 
