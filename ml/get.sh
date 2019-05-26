@@ -4,10 +4,10 @@ curl https://api.bitcoincharts.com/v1/csv/bitstampUSD.csv.gz > bitstampUSD.csv.g
 gunzip -f bitstampUSD.csv.gz
 
 # Cut only latest period (from previous cycle high)
-# tail -20900000 bitstampUSD.csv > data.csv
+tail -20900000 bitstampUSD.csv > data.csv
 
 # Cut only latest period (from this year)
-tail -12000000 bitstampUSD.csv > data.csv
+# tail -12000000 bitstampUSD.csv > data.csv
 
 # Cut only latest period (recent uptrend)
 # tail -5000000 bitstampUSD.csv > data.csv
