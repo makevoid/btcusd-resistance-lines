@@ -34,10 +34,8 @@ def main(filename):
 
     # TODO: write smart configuration based on period (number of days) and frequency (price-range, a higher quantile will create more clusters volatility)
 
-    # calculate bandwidth (expirement with quantile)
-    # quantile=0.2 # for 20900000
-    quantile=0.12 # for 12000000
-    # quantile=0.2    # for 5000000
+    # calculate bandwidth
+    quantile=0.12 # current quantile value, try different values, the target is to find a quantile value that generates a range around 3-4 to max 8-10 clusters. hf!
     print("Quantile: ", quantile)
     bandwidth = estimate_bandwidth(price_data, quantile=quantile, n_samples=4000)
     ms = MeanShift(n_jobs=12, bandwidth=bandwidth, bin_seeding=True)
