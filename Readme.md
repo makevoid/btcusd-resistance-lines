@@ -60,6 +60,7 @@ Images sometimes are better than many words :D
 
 recent image (may '19)
 
+update (june '19) http://makevoid.s3.amazonaws.com/img/chart1.png
 
 ![](https://raw.githubusercontent.com/makevoid/chart-annotator-resistance-lines/a380830360e6b0dbc2c1c98b2639dccf3d9007b1/tmp/4-years-cycle-restarting-1.png?raw=true)
 
