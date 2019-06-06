@@ -36,6 +36,7 @@ def main(filename):
 
     # calculate bandwidth
     quantile=0.12 # current quantile value, try different values, the target is to find a quantile value that generates a range around 3-4 to max 8-10 clusters. hf!
+    quantile=0.10
     print("Quantile: ", quantile)
     bandwidth = estimate_bandwidth(price_data, quantile=quantile, n_samples=4000)
     ms = MeanShift(n_jobs=12, bandwidth=bandwidth, bin_seeding=True)

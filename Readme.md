@@ -30,6 +30,14 @@ To execute the "data crunching" and "chart annotating" job, use run.sh:
 
     ./run.sh
 
+### A
+
+Run a server, for example the python SimpleHTTPServer via:
+
+```
+./serve.sh
+```
+
 Then visit http://localhost:3000/
 
 
@@ -48,7 +56,7 @@ Project forked from https://github.com/jonromero/forex_algotrading
 
 ### Screenshot
 
-Images sometimes are better than many words :D 
+Images sometimes are better than many words :D
 
 recent image (may '19)
 
@@ -59,11 +67,10 @@ first image produced 1 month before
 
 ![](https://github.com/makevoid/chart-annotator-resistance-lines/blob/master/tmp/resistance-lines-ml-classification-meanshift.png?raw=true)
 
-If you want to use it "as it is" you will need to configure the AWS S3 credentials as that's the current way I'm saving/publishing the results. You want to comment all that code if you just to run it locally instead of automated inside docker. 
+If you want to use it "as it is" you will need to configure the AWS S3 credentials as that's the current way I'm saving/publishing the results. You want to comment all that code if you just to run it locally instead of automated inside docker.
 
 You probably want also to tune `quantile` for the MeanShift clusterization to match the current price action. A range in between x and x should do that (The target is to find a `quantile` value that generates min 3-4 to max 8-10 clusters)
 
 Enjoy!
 
 @makevoid
-
