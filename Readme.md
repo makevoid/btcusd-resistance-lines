@@ -18,10 +18,6 @@ Run:
 
 This will install everything and it will also automatically starts an HTTP server
 
-Otherwise you can run the http server via
-
-    python -m SimpleHTTPServer 3000
-
 
 ### Running
 
@@ -30,7 +26,7 @@ To execute the "data crunching" and "chart annotating" job, use run.sh:
 
     ./run.sh
 
-### A
+### Serve
 
 Run a server, for example the python SimpleHTTPServer via:
 
