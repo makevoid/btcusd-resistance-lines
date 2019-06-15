@@ -26,6 +26,13 @@ To execute the "data crunching" and "chart annotating" job, use run.sh:
 
     ./run.sh
 
+### Running (Docker version)
+
+
+To build and execute everything via docker compose run:
+
+    ./recompose.sh
+
 ### Serve
 
 Run a server, for example the python SimpleHTTPServer via:
