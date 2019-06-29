@@ -28,7 +28,7 @@ To execute the "data crunching" and "chart annotating" job, use run.sh:
 ### Running (Docker version)
 
 
-To build and execute everything via docker compose run:
+To build and execute python via docker-compose, run:
 
     ./recompose.sh
 
