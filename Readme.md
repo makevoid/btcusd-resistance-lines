@@ -47,12 +47,8 @@ Then visit http://localhost:3000/
 
 https://scikit-learn.org/stable/modules/generated/sklearn.cluster.MeanShift.html
 
-https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-adds-scikit-learn-support/
 
-### Sources / Extra
-
-https://github.com/aws/sagemaker-scikit-learn-container
-
+### Sources 
 
 Project forked from https://github.com/jonromero/forex_algotrading
 
