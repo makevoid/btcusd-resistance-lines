@@ -1,4 +1,4 @@
-py-scikit-resistance-lines-btcusd
+# py-scikit-resistance-lines-btcusd
 
 ### (example) io a Chart Annotator that draws Resistance Lines (currently it doesn't draws the direction yet - TODO: 'feature', not yet in the backlog)
 
