@@ -1,7 +1,8 @@
 # py-scikit-resistance-lines-btcusd
 
-### (example) io a Chart Annotator that draws Resistance Lines 
-### Automatically find resistance lines in pricing trading data
+### Example of a Chart Annotator script that draws Resistance Lines 
+
+#### Automatically finds resistance lines in pricing trading data
 
 This repo has an example of an annotated SciKit Learn example of ML Classification using the Clustering Algo Meanshift
 
