@@ -8,6 +8,8 @@ This repo has an example of an annotated SciKit Learn example of ML Classificati
 
 The target of this code is to find resistance lines in trading chart data (OHLC)
 
+The example set is BTCUSD from bitstamp.
+
 
 ### Installation
 
