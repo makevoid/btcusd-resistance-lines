@@ -1,4 +1,6 @@
-# Chart Annotator - Resistance Lines
+py-scikit-resistance-lines-btcusd
+
+### (example) io a Chart Annotator that draws Resistance Lines (currently it doesn't draws the direction yet - TODO: 'feature', not yet in the backlog)
 
 ### Automatically find resistance lines in pricing trading data
 
