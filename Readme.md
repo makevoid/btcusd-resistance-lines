@@ -65,13 +65,13 @@ Currently it doesn't draws the direction yet - TODO: 'feature', not yet in the b
 
 Images sometimes are better than many words :D
 
-recent image (may '19)
+"recent" image
 
-update (june '19) http://makevoid.s3.amazonaws.com/img/chart1.png
+Jun '19
 
-![](https://raw.githubusercontent.com/makevoid/chart-annotator-resistance-lines/a380830360e6b0dbc2c1c98b2639dccf3d9007b1/tmp/4-years-cycle-restarting-1.png?raw=true)
+![](http://makevoid.s3.amazonaws.com/share/chart-annotator-resistance-line-py-scikitlearn-clustering-example.png?raw=true)
 
-first image produced 1 month before
+First run (Apr '19)
 
 ![](https://github.com/makevoid/chart-annotator-resistance-lines/blob/master/tmp/resistance-lines-ml-classification-meanshift.png?raw=true)
 
