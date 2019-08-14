@@ -1,6 +1,7 @@
 set -xe
 
-curl https://api.bitcoincharts.com/v1/csv/bitstampUSD.csv.gz > bitstampUSD.csv.gz
+# TODO: remove -k (--insecure) as soon as bcharts.com fixes the ssl renewal issue
+curl -k https://api.bitcoincharts.com/v1/csv/bitstampUSD.csv.gz > bitstampUSD.csv.gz
 gunzip -f bitstampUSD.csv.gz
 
 # Cut only latest period (from previous cycle high)

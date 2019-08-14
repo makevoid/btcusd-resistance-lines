@@ -1,69 +1,108 @@
 <html>
   <head>
+
     <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+
+    <title>Chart - Resistance lines - BTC/USD (bitstamp)</title>
 
   </head>
 
   <body>
 
     <div id="container" style="width:100%; height:800px;"></div>
+
     <script type="text/javascript">
 
-      // TODO: Rewrite in React or in hyperhtml or HTML5 web component
+      // TODO: Rewrite in React or in hyperhtml or HTML5 web component (lol, ended up with refactoring the original JS because I couldn't stand it)
 
       // const host = "http://localhost:3000"
       const host = "https://s3-eu-west-1.amazonaws.com/mkv-ml"
 
-      $(document).ready(function() {
-          $.getJSON(`${host}/ticks.json`, function(a) {
-              $.getJSON(`${host}/ml_results.json`, function(b) {
-                  var c = [];
-                  for (var d in a) {
-                      ob = a[d];
-                      c.push([ Date.parse(d), parseFloat(ob.open), parseFloat(ob.high), parseFloat(ob.low), parseFloat(ob.close) ]);
-                  }
-                  c = c.sort();
-                  $("#container").highcharts("StockChart", {
-                      chart: {
-                          events: {
-                              load: function() {
-                                  for (i in b) this.yAxis[0].addPlotLine({
-                                      value: b[i],
-                                      width: 2,
-                                      dashStyle: "shortdash",
-                                      color: "red"
-                                  });
-                              }
-                          }
-                      },
-                      rangeSelector: {
-                          selected: 1
-                      },
-                      title: {
-                          text: ""
-                      },
-                      yAxis: {
-                          title: {
-                              text: "Exchange rate"
-                          },
-                          type: "logarithmic",
-                          plotLines: []
-                      },
-                      series: [ {
-                          type: "candlestick",
-                          name: "Price",
-                          data: c,
-                          tooltip: {
-                              valueDecimals: 2
-                          }
-                      } ]
-                  });
-              });
-          });
-      });
+      const stockChart = ({ results, chartOLHC }) => {
+        $("#container").highcharts("StockChart", {
+            chart: {
+              events: {
+                load: function() {
+                  for (point in chartOLHC) this.yAxis[0].addPlotLine({
+                    value:      chartOLHC[point],
+                    width:      2,
+                    dashStyle:  "shortdash",
+                    color:      "red",
+                  })
+                }
+              }
+            },
+            rangeSelector: {
+              selected: 1,
+            },
+            title: {
+              text: "",
+            },
+            yAxis: {
+              title: {
+                text: "Exchange rate",
+              },
+              type: "logarithmic",
+              plotLines: [],
+            },
+            series: [{
+              type: "candlestick",
+              name: "Price",
+              data: chartOLHC,
+              tooltip: {
+                valueDecimals: 2,
+              }
+            }]
+        })
+      }
 
+      const getResults = ({ ticks }) => (
+        // TODO: switch to fetch
+        $.getJSON(`${host}/ml_results.json`, (results) => {
+            let res = []
+            for (let d in ticks) {
+                ob = ticks[d]
+                res.push([
+                  Date.parse(d),       // date
+                  parseFloat(ob.open), // o
+                  parseFloat(ob.high), // h
+                  parseFloat(ob.low),  // l
+                  parseFloat(ob.close) // c
+                ])
+            }
+            res = res.sort()
+            const chartOLHC = res
+            stockChart({ chartOLHC })
+        })
+      )
+
+      const getTicks = () => (
+        // TODO: switch to fetch
+        $.getJSON(`${host}/ticks.json`, (ticks) =>  {
+          getResults({ ticks })
+        })
+      )
+
+      // ---
+
+      // TODO: change candlestick to Heikin-Ashi
+
+      // await all values to avoid nested callbacks (procedural is easier than functional)
+
+      // $.getJSON(`${host}/ticks.json`,  => (ticks) {
+      //   getResults({ ticks })
+      // })
+
+      // ---
+
+      // TODO: switch with domcontentloaded event
+      $(document).ready(() => {
+
+        getTicks()
+
+      })
 
     </script>
   </body>
