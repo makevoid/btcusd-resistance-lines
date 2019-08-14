@@ -1,6 +1,6 @@
-# py-scikit-resistance-lines-btcusd
+# btcusd-resistance-lines
 
-### Example of a Chart Annotator script that draws Resistance Lines
+### Example of a Chart Annotator script that draws Resistance Lines (.py - scikitlearn - meanshift)
 
 #### Automatically finds resistance lines in pricing trading data
 
