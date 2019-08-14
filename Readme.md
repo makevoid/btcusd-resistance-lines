@@ -6,9 +6,11 @@
 
 This repo has an example of an annotated SciKit Learn example of ML Classification using the Clustering Algo Meanshift
 
-The target of this code is to find resistance lines in trading chart data (OHLC)
+Uses bitstamp BTC/USD historic value from api.bitcoincharts.com
 
-The example set is BTCUSD from bitstamp.
+The target of this code is to find resistance lines in trading chart data (OHLC) 
+
+The codebase is simple, this is a fork of the forex_algotrading project, please check the "sources" section of this readme for info about the original repo
 
 
 ### Installation
