@@ -79,6 +79,8 @@ If you want to use it "as it is" you will need to configure the AWS S3 credentia
 
 You probably want also to tune `quantile` for the MeanShift clusterization to match the current price action. A range in between x and x should do that (The target is to find a `quantile` value that generates min 3-4 to max 8-10 clusters)
 
+---
+
 Enjoy!
 
 @makevoid
