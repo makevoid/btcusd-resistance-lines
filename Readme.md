@@ -1,6 +1,6 @@
 # py-scikit-resistance-lines-btcusd
 
-### Example of a Chart Annotator script that draws Resistance Lines 
+### Example of a Chart Annotator script that draws Resistance Lines
 
 #### Automatically finds resistance lines in pricing trading data
 
@@ -51,7 +51,7 @@ Then visit http://localhost:3000/
 https://scikit-learn.org/stable/modules/generated/sklearn.cluster.MeanShift.html
 
 
-### Sources 
+### Sources
 
 Project forked from https://github.com/jonromero/forex_algotrading
 
@@ -66,6 +66,10 @@ Currently it doesn't draws the direction yet - TODO: 'feature', not yet in the b
 Images sometimes are better than many words :D
 
 "recent" image
+
+Aug '19
+
+![](...)
 
 Jun '19
 
