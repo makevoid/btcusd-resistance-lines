@@ -67,15 +67,15 @@ Images sometimes are better than many words :D
 
 "recent" image
 
-Aug '19
+#### Aug '19
 
-![](...)
+![](https://github.com/makevoid/py-scikit-resistance-lines-btcusd-example/blob/master/tmp/2019-aug-15.png?raw=true)
 
-Jun '19
+#### Jun '19
 
 ![](http://makevoid.s3.amazonaws.com/share/chart-annotator-resistance-line-py-scikitlearn-clustering-example.png?raw=true)
 
-First run (Apr '19)
+#### First run (Apr '19)
 
 ![](https://github.com/makevoid/chart-annotator-resistance-lines/blob/master/tmp/resistance-lines-ml-classification-meanshift.png?raw=true)
 
