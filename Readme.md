@@ -69,6 +69,14 @@ Images sometimes are better than many words :D
 
 "recent" image
 
+#### Sep '19
+
+shrinkage around the 9k-12k area
+
+
+![](http://mkvd.s3.amazonaws.com/tmp/chart-resistance-lines-september-2019.png)
+
+
 #### Aug '19
 
 ![](https://github.com/makevoid/py-scikit-resistance-lines-btcusd-example/blob/master/tmp/2019-aug-15.png?raw=true)
