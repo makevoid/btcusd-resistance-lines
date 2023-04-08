@@ -1,4 +1,4 @@
-# btcusd-resistance-lines
+# BTC / USD Resistance lines - resistance-lines
 
 ### Example of a Chart Annotator script that draws Resistance Lines (.py - scikitlearn - meanshift)
 
